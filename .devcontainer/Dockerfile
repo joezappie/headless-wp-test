@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.2
 #
 # ---- Base Node ----
-FROM node:18-alpine AS base
+FROM node:18 AS base
 
 # Install GIT
 RUN apt-get update -yq --fix-missing \
