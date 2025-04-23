@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.7",
-    "@ascendweb/babel-preset": "^1.0.0",
-    "@ascendweb/eslint-config": "^1.0.1",
+    "@ascendweb/babel-preset": "^1.1.0",
+    "@ascendweb/eslint-config": "^1.1.0",
     "@ascendweb/prettier-config": "^1.0.0",
     "@faustwp/cli": "^3.1.0",
     "@faustwp/core": "^3.1.0",
@@ -21,5 +21,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^4.1.4"
+  },
+  "imports": {
+    "#/*": "./"
+  },
+  "devDependencies": {
+    "eslint": "^9.25.1"
   }
 }
