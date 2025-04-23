@@ -32,8 +32,9 @@
           "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts, ${capture}.css, ${capture}.shadow.css",
           "*.jsx": "${capture}.js",
           "*.tsx": "${capture}.ts",
+          ".env.local": "${capture}.*",
           "tsconfig.json": "tsconfig.*.json",
-          "package.json": "package-lock.json, yarn.lock",
+          "package.json": "package-lock.json, yarn.lock, eslint.config.mjs, jsconfig.json, next.config.js, prettier.config.mjs, faust.config.js, postcss.config.mjs",
           "docker-compose.*": "*.dockerignore, Dockerfile*",
           "Dockerfile": "Dockerfile*"
         },

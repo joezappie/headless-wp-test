@@ -1,16 +1,15 @@
-import { gql } from "@apollo/client";
-import Head from "next/head";
-import EntryHeader from "../components/entry-header";
-import Footer from "../components/footer";
-import Header from "../components/header";
+import { gql } from '@apollo/client';
+import Head from 'next/head';
+import EntryHeader from '@/components/entry-header';
+import Footer from '@/components/footer';
+import Header from '@/components/header';
 export default function Component(props) {
   // Loading state for previews
   if (props.loading) {
     return <>Loading...</>;
   }
 
-  const { title: siteTitle, description: siteDescription } =
-    props.data.generalSettings;
+  const { title: siteTitle, description: siteDescription } = props.data.generalSettings;
   const menuItems = props.data.primaryMenuItems.nodes;
   const { title, content, date, author } = props.data.post;
 
@@ -20,11 +19,7 @@ export default function Component(props) {
         <title>{`${title} - ${siteTitle}`}</title>
       </Head>
 
-      <Header
-        siteTitle={siteTitle}
-        siteDescription={siteDescription}
-        menuItems={menuItems}
-      />
+      <Header siteTitle={siteTitle} siteDescription={siteDescription} menuItems={menuItems} />
 
       <main className="container">
         <EntryHeader title={title} date={date} author={author.node.name} />

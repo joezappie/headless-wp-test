@@ -1,11 +1,11 @@
-import { gql } from "@apollo/client";
-import Link from "next/link";
-import style from "./header.module.css";
+import { gql } from '@apollo/client';
+import Link from 'next/link';
+import style from './header.module.css';
 
 export default function Header({ siteTitle, siteDescription, menuItems }) {
   return (
-    <header className={style.header}>
-      <div className="container">
+    <header>
+      <div>
         <Link href="/" className={style.brand}>
           <h2 className={style.siteTitle}>{siteTitle}</h2>
           <p className={style.siteDescription}>{siteDescription}</p>
@@ -15,7 +15,7 @@ export default function Header({ siteTitle, siteDescription, menuItems }) {
           <ul>
             {menuItems.map((item) => (
               <li key={item.id}>
-                <Link href={item.uri}>{item.label}</Link>
+                <Link href={item.path}>{item.label}</Link>
               </li>
             ))}
           </ul>
@@ -32,17 +32,14 @@ Header.fragments = {
         title
         description
       }
-      primaryMenuItems: menuItems(where: { location: PRIMARY }) {
+      primaryMenuItems: menuItems(where: { location: PRIMARY, parentId: 0 }) {
         nodes {
-          id
-          uri
           path
           label
-          parentId
-          cssClasses
-          menu {
-            node {
-              name
+          childItems {
+            nodes {
+              path
+              label
             }
           }
         }

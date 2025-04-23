@@ -5,15 +5,17 @@
 }
 
 .card {
-  padding: 1.5rem;
   border: 1px solid #e1e1e1;
   border-radius: 0.5rem;
+  padding: 1.5rem;
   line-height: 1.5;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .card {
-    transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition:
+      border-color 0.2s ease-in-out,
+      color 0.2s ease-in-out;
   }
 }
 
@@ -23,12 +25,12 @@
 }
 
 .card h3 {
-  font-size: 1.75rem;
   margin: 0;
   margin-bottom: 0.5rem;
+  font-size: 1.75rem;
 }
 
 .card p {
-  font-size: 1.25rem;
   margin: 0;
+  font-size: 1.25rem;
 }

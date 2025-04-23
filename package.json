@@ -5,12 +5,17 @@
     "dev": "faust dev",
     "build": "faust build",
     "generate": "faust generatePossibleTypes",
-    "start": "faust start"
+    "start": "faust start",
+    "lint:fix": "eslint . --fix",
+    "lint": "eslint .",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "style:fix": "eslint . --fix & prettier --write ."
   },
   "dependencies": {
     "@apollo/client": "^3.7.7",
-    "@ascendweb/babel-preset": "^1.1.0",
-    "@ascendweb/eslint-config": "^1.1.0",
+    "@ascendweb/babel-preset": "^1.1.2",
+    "@ascendweb/eslint-config": "^1.1.6",
     "@ascendweb/prettier-config": "^1.0.0",
     "@faustwp/cli": "^3.1.0",
     "@faustwp/core": "^3.1.0",
@@ -23,7 +28,7 @@
     "tailwindcss": "^4.1.4"
   },
   "imports": {
-    "#/*": "./"
+    "#*": "./*"
   },
   "devDependencies": {
     "eslint": "^9.25.1"

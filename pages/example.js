@@ -1,9 +1,9 @@
-import { gql, useQuery } from "@apollo/client";
-import Head from "next/head";
-import Header from "../components/header";
-import EntryHeader from "../components/entry-header";
-import Footer from "../components/footer";
-import { getNextStaticProps } from "@faustwp/core";
+import { gql, useQuery } from '@apollo/client';
+import { getNextStaticProps } from '@faustwp/core';
+import Head from 'next/head';
+import EntryHeader from '@/components/entry-header';
+import Footer from '@/components/footer';
+import Header from '@/components/header';
 
 /**
  * Next.js file based page example with Faust helpers.
@@ -11,8 +11,7 @@ import { getNextStaticProps } from "@faustwp/core";
 export default function Page() {
   const { data } = useQuery(Page.query);
 
-  const { title: siteTitle, description: siteDescription } =
-    data.generalSettings;
+  const { title: siteTitle, description: siteDescription } = data.generalSettings;
   const menuItems = data.primaryMenuItems.nodes;
 
   return (
@@ -21,11 +20,7 @@ export default function Page() {
         <title>{siteTitle}</title>
       </Head>
 
-      <Header
-        siteTitle={siteTitle}
-        siteDescription={siteDescription}
-        menuItems={menuItems}
-      />
+      <Header siteTitle={siteTitle} siteDescription={siteDescription} menuItems={menuItems} />
 
       <main className="container">
         <EntryHeader title="Next.js Page Example" />
